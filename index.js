@@ -27,10 +27,21 @@ let sneck = [
 window.addEventListener("keydown", changeDirection);
 resetBtn.addEventListener("click", resetGame)
 
+gameStart();
+createFood();
+
 function gameStart(){}
 function nextTick(){}
 function clearBoard(){}
-function createFood(){}
+function createFood(){
+    function randomFood(min, max){
+        const randNum = Math.round((Math.random() * (max - min) + min) / unitSize) * unitSize;
+        return randNum;
+    }
+    foodX = randomFood(0, gameWidth - unitSize);
+    foodY = randomFood(0, gameWidth - unitSize);
+    console.log(foodX);
+};
 function drawFood(){}
 function move(){}
 function drawSneck(){}
@@ -39,4 +50,3 @@ function checkGameOver(){}
 function displayGameOver(){}
 function resetGame(){}
 
-gameStart()
