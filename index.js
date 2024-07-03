@@ -29,6 +29,7 @@ resetBtn.addEventListener("click", resetGame)
 
 gameStart();
 createFood();
+drawFood();
 
 function gameStart(){}
 function nextTick(){}
@@ -42,7 +43,10 @@ function createFood(){
     foodY = randomFood(0, gameWidth - unitSize);
     console.log(foodX);
 };
-function drawFood(){}
+function drawFood(){
+    context.fillStyle = foodColor;
+    context.fillRect(foodX, foodY, unitSize, unitSize)
+}
 function move(){}
 function drawSneck(){}
 function changeDirection(){}
